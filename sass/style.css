@@ -1,0 +1,226 @@
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slideToRight {
+  from {
+    right: 100%;
+  }
+  to {
+    right: 0px;
+  }
+}
+@keyframes slideLeftToRight {
+  from {
+    margin-left: 100%;
+  }
+  to {
+    margin-left: 0%;
+  }
+}
+@keyframes slideToLeft {
+  from {
+    left: 100px;
+  }
+  to {
+    left: 0px;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #879cfc;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+.main-content {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.button {
+  background-color: #879cfc;
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button:hover {
+  transform: scale(1.2);
+}
+
+.img object {
+  border-radius: 20%;
+}
+
+.bg {
+  height: 100vh;
+  width: 100%;
+  background-image: url(.././resources/bg.png);
+  background-size: cover;
+  background-position: center;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(95deg, rgb(4, 36, 179) 51%, rgb(253, 45, 45) 100%);
+}
+.bg .bg-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+}
+.bg .bg-container .side-a {
+  flex: 1;
+  color: antiquewhite;
+}
+.bg .bg-container .side-a h1 {
+  font-size: 50px;
+}
+.bg .bg-container .side-a .intro-text {
+  text-align: right;
+  animation: fade 1s, slideToRight 1s;
+  animation-fill-mode: forwards;
+  position: relative;
+  padding: 40px;
+}
+.bg .bg-container .side-a a {
+  opacity: 0;
+  text-decoration: none;
+  color: antiquewhite;
+  animation: fade 1s, slideToRight 1s;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+  position: relative;
+}
+.bg .bg-container .side-a .web-info {
+  opacity: 0;
+  display: flex;
+  position: absolute;
+  bottom: 0px;
+  animation: fade 1s, slideLeftToRight 1s;
+  animation-fill-mode: forwards;
+  animation-delay: 1.8s;
+}
+.bg .bg-container .side-a .web-info img {
+  height: 90px;
+  width: 130px;
+}
+.bg .bg-container .side-a .web-info img:hover {
+  animation: rotate 0.5s;
+}
+.bg .bg-container .side-a .web-info p {
+  margin-top: 40px;
+  font-size: small;
+}
+.bg .bg-container .side-b {
+  flex: 1;
+  display: flex;
+}
+.bg .bg-container .side-b div {
+  text-align: left;
+  animation: fade 1s, slideToLeft 1s;
+  animation-fill-mode: forwards;
+  position: relative;
+}
+.bg .bg-container .side-b .dp {
+  width: 650px;
+  height: 650px;
+  background-image: url(.././resources/dp-remove-bg.png);
+}
+.bg .bg-container .side-b .dp:hover {
+  background-image: url(.././resources/dp-remove-bg-gray.png);
+}
+.bg .bg-container .side-b .soc-med {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 70px;
+  color: antiquewhite;
+  opacity: 0;
+  animation: fade 1s, slideToLeft 1s;
+  animation-fill-mode: forwards;
+  position: relative;
+  animation-delay: 1s;
+}
+.bg .bg-container .side-b .soc-med a.svg {
+  position: relative;
+  display: inline-block;
+}
+.bg .bg-container .side-b .soc-med a.svg:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.bg .bg-container .side-b .soc-med a.svg:hover {
+  transform: scale(1.7);
+}
+
+.flex-box {
+  display: flex;
+}
+.flex-box .text {
+  padding: 20px;
+}
+.flex-box .work-img {
+  padding: 20px;
+}
+
+.work-container h1 {
+  text-align: center;
+}
+
+@keyframes scaling {
+  to {
+    scale: 1 1;
+  }
+}
+.introduction .work-container .flex-box:nth-of-type(odd) .text-img-box .img {
+  padding: 10px;
+  float: left;
+}
+.introduction .work-container .flex-box:nth-of-type(odd) .text-img-box .img img {
+  width: 170px;
+  height: 245px;
+  opacity: 0;
+  position: relative;
+}
+.introduction .work-container .flex-box:nth-of-type(even) .text-img-box .img {
+  padding: 10px;
+  float: right;
+}
+.introduction .work-container .flex-box:nth-of-type(even) .text-img-box .img img {
+  width: 170px;
+  height: 245px;
+  opacity: 0;
+  position: relative;
+}/*# sourceMappingURL=style.css.map */
