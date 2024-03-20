@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Profile</title>
         <link rel="stylesheet" href="sass/style.css">
         <script src="script/index.js"></script>
@@ -15,12 +16,13 @@
             <div class="bg">
                 <div class="bg-container">
                     <div class="side-a">
-                        <div class="intro-text">
+                        <div class="intro-text" id="intro-text">
                             <h1>Hi, I'm Mark Gil Gutierrez.</h1>
                             <h2>I'm a Software Engineer</h2>
                          
-                            <a href="#introduction-container" class="hre">
-                                <button class="button">Introduction</button> 
+                            <a href="#introduction-container" class="btn-svg">
+                                <object data="resources/arrow-down.svg" type="image/svg+xml" width="50" height="50"> </object>
+                                <!-- <button class="button">Introduction</button>  -->
                             </a>
                             
                         </div>
@@ -39,15 +41,15 @@
                         
                         <div class="soc-med">
                             <p>Follow Me :)</p>
-                            <a href="https://www.facebook.com/markgil.gutierrez.3/" class="svg">
+                            <a href="https://www.facebook.com/markgil.gutierrez.3/" class="btn-svg">
                                 <object data="resources/fb.svg" type="image/svg+xml" width="50" height="50"> </object>
                             </a>
                         
-                            <a href="https://www.youtube.com/@MaakusHobby" class="svg">
+                            <a href="https://www.youtube.com/@MaakusHobby" class="btn-svg">
                                 <object data="resources/yt.svg" type="image/svg+xml" width="50" height="50"> </object>
                             </a> 
                             
-                            <a href="https://www.instagram.com/maakushobby/" class="svg">
+                            <a href="https://www.instagram.com/maakushobby/" class="btn-svg">
                                 <object data="resources/instagram.svg" type="image/svg+xml" width="50" height="50"> </object>
                             </a>
                          </div>
@@ -106,22 +108,6 @@
                             
                         </div>
                     </div>
-                    
-                    <div class="flex-box">
-                        <div>
-                            <p> Greetings and welcome to my online portfolio! I'm Mark Gil L. Gutierrez, 
-                                a passionate software developer with a penchant for turning ideas into elegant, efficient solutions.
-                                
-                                With a solid foundation in various programming language such as Javascript,Python,C,C++,C# and other OOP, 
-                                I've had the privilege of working on a variety of projects ranging from [Type of Projects] to [Another Type of Projects]. 
-                                Throughout my career, I've embraced challenges head-on, leveraging technology to solve complex problems and deliver high-quality 
-                                software solutions.</p>
-                        </div>
-                        
-                        <div>
-                            <p>asdasd asd </p>
-                        </div>
-                    </div>
 
                 </div>
 
@@ -130,6 +116,26 @@
 
             <div class="work-container">
                 <h1>Professional Experience:</h1>
+
+                <div class="flex-box">
+                    <div class="work-side-a work-img">
+                        <object data="resources/bulb.svg" type="image/svg+xml" width="50" height="50"> </object>
+                    </div>
+
+                    <div class="work-side-b text">
+                        <p> A passionate software developer with a penchant for turning ideas into elegant, efficient solutions.
+                            <br><br>
+                            
+                            With a solid foundation in various programming language such as Javascript,Python,C,C++,C# and other OOP, 
+                            I've had the privilege of working on a variety of projects ranging from [Type of Projects] to [Another Type of Projects]. 
+                            Throughout my career, I've embraced challenges head-on, leveraging technology to solve complex problems and deliver high-quality 
+                            software solutions.</p>
+                    </div>
+ 
+                    <!-- <div>
+                        <p>asdasd asd </p>
+                    </div> -->
+                </div>
 
                 <div class="flex-box">
                     <div class="work-side-a work-img">
@@ -210,17 +216,24 @@
                     
                     </div>
                 </div>  
-
-                <div class="contact" id="contact">
-                    <h3>Email: markgilgutierrez19@gmail.com</h3>
-                    <h3>Contact: 0912-212-2078</h3>                 
-                </div>
-
-                
             
             </div> <!--end of work-container-->
-
         </div>  <!--end of main-content-->
+        <footer>
+            <div class="contact" id="contact">
+                <div class="contact-container">
+                    <div class="contact-item">
+                        <object data="resources/mail.svg" width="30" height="30"> </object>
+                        <h3>Email: markgilgutierrez19@gmail.com</h3>
+                    </div>
+
+                    <div class="contact-item">
+                        <object data="resources/phone.svg" width="30" height="30"> </object>
+                        <h3>Contact: 0912-212-2078</h3>  
+                    </div>
+                </div>         
+            </div>  
+        </footer>
        </div> <!--end of container-->
     </body>
 </html>

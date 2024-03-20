@@ -15,7 +15,7 @@ window.addEventListener('scroll', function() {
     let img_items = this.document.querySelectorAll('.introduction .flex-box .text-img-box .img img');
 
     
-    if(num >= 1)
+    if(num >= 0.9)
     {
         if(!animationPlayed)
         {
@@ -45,6 +45,8 @@ window.addEventListener('scroll', function() {
     }
 
     this.document.getElementById("intro-title").style.scale = num;
+    this.document.getElementById("intro-text").style.scale = num + 1;
+    this.document.getElementById("contact").style.scale = num * .5;
 
 
 
