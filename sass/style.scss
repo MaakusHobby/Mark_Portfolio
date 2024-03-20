@@ -230,13 +230,14 @@ body{
 }
 
 .work-container{
-    h1{
+    h1, h2, h3{
         text-align: center;
+        
     }
-}
 
-@keyframes scaling{
-    to{ scale: 1 1;}
+    .work-date, .work-date-diff{
+        font-family: "Moon Dance";
+    }
 }
 
 .introduction{

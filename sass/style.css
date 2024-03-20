@@ -205,15 +205,13 @@ body {
   padding: 20px;
 }
 
-.work-container h1 {
+.work-container h1, .work-container h2, .work-container h3 {
   text-align: center;
 }
-
-@keyframes scaling {
-  to {
-    scale: 1 1;
-  }
+.work-container .work-date, .work-container .work-date-diff {
+  font-family: "Moon Dance";
 }
+
 .introduction .work-container .flex-box:nth-of-type(odd) .text-img-box .img {
   padding: 10px;
   float: left;
