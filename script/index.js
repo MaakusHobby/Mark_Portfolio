@@ -30,7 +30,44 @@ var DateDiff = {
     }
 }
 
+var bg_colors = {
+    custom1 : { light: "#436850", dark: "#12372A"},
+    custom2 : { light: "#474F7A", dark: "#1F2544"},
+    custom3 : { light: "#40679E", dark: "#1B3C73"},
+    custom4 : { light: "#2D9596", dark: "#265073"},
+    custom5 : { light: "#436850", dark: "#12372A"},
+    custom6 : { light: "#FC6736", dark: "#0C2D57"},
+    custom7 : { light: "#59B4C3", dark: "#211C6A"},
+    custom7 : { light: "#944E63", dark: "#0D9276"},
+    custom7 : { light: "#B19470", dark: "#43766C"},
+}
+
+var bg_color_light = "";
+var bg_color_dark = "";
+
+function getRandomGradient()
+{
+    let random_bg = Math.floor(Math.random() * Object.keys(bg_colors).length)
+
+    bg_color_light = Object.values(bg_colors)[random_bg].light;
+    bg_color_dark = Object.values(bg_colors)[random_bg].dark;
+
+    return "linear-gradient(180deg, "+ Object.values(bg_colors)[random_bg].light +" 51%, "+ Object.values(bg_colors)[random_bg].dark +" 100%)"
+}
+
+
+function setBgColor()
+{
+    let random_gradient = getRandomGradient();
+    this.document.querySelector(".bg").style.background = random_gradient;
+    this.document.querySelector(".contact").style.background = bg_color_light;
+    this.document.getElementsByTagName('body')[0].style.background = bg_color_dark;
+
+}
+
 window.addEventListener("DOMContentLoaded", function() {   
+    setBgColor();
+
     let work_dates = this.document.querySelectorAll(".work-date")
 
     console.log(work_dates)
@@ -97,7 +134,7 @@ window.addEventListener('scroll', function() {
 
     this.document.getElementById("intro-title").style.scale = num;
     this.document.getElementById("intro-text").style.scale = num + 1;
-    this.document.getElementById("contact").style.scale = num * .5;
+    // this.document.getElementById("contact").style.scale = num * .5;
 
     // Work Date
     // const work_date = this.document.getElementById("work-date").innerHTML.split("-")
