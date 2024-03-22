@@ -50,14 +50,14 @@ html {
 
 body {
   font-family: sans-serif;
-  padding: 0;
-  margin: 0;
-  color: antiquewhite;
+  color: rgb(255, 255, 255);
 }
 
 .container {
   margin-left: auto;
   margin-right: auto;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -117,10 +117,10 @@ body {
   bottom: 0;
   width: 100%;
   display: flex;
+  overflow: hidden;
 }
 .bg .bg-container .side-a {
   flex: 1;
-  color: antiquewhite;
 }
 .bg .bg-container .side-a h1 {
   font-size: 50px;
@@ -135,7 +135,6 @@ body {
 .bg .bg-container .side-a a {
   opacity: 0;
   text-decoration: none;
-  color: antiquewhite;
   animation: fade 1s, slideToRight 1s;
   animation-fill-mode: forwards;
   animation-delay: 1s;
@@ -185,7 +184,6 @@ body {
   justify-content: center;
   flex-direction: column;
   padding-top: 70px;
-  color: antiquewhite;
   opacity: 0;
   animation: fade 1s, slideToLeft 1s;
   animation-fill-mode: forwards;
@@ -210,32 +208,39 @@ body {
   font-family: "Moon Dance";
 }
 
-.introduction .work-container .flex-box:nth-of-type(odd) .text-img-box .img {
+.introduction .work-container .flex-box .text-img-box .img {
   padding: 10px;
   float: left;
 }
-.introduction .work-container .flex-box:nth-of-type(odd) .text-img-box .img img {
+.introduction .work-container .flex-box .text-img-box .img .myself-img {
+  opacity: 0;
+}
+.introduction .work-container .flex-box .text-img-box .img img {
   width: 170px;
   height: 245px;
-  opacity: 0;
   position: relative;
 }
-.introduction .work-container .flex-box:nth-of-type(even) .text-img-box .img {
+.introduction .work-container .section-2 {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.introduction .work-container .section-2 .img-carousel {
+  background-color: rgb(100, 100, 100);
+  width: 800px;
+  height: 500px;
   padding: 10px;
-  float: right;
+  display: flex;
 }
-.introduction .work-container .flex-box:nth-of-type(even) .text-img-box .img img {
-  width: 170px;
-  height: 245px;
-  opacity: 0;
-  position: relative;
+.introduction .work-container .section-2 .img-carousel .image-item {
+  min-width: 100%;
+  min-height: 100%;
 }
 
 .contact {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: aliceblue;
   width: 100%;
   padding-bottom: 10px;
 }
@@ -272,9 +277,19 @@ body {
     max-height: 40%;
   }
   .main-content {
-    padding: 10px;
+    padding: 20px;
   }
   .main-content .work-container .flex-box .work-img {
     display: none;
+  }
+  .main-content .introduction .section-2 .img-carousel {
+    max-width: 90%;
+    max-height: 400px;
+  }
+}
+@media only screen and (max-width: 750px) {
+  .main-content .introduction .section-2 .img-carousel {
+    max-width: 500px;
+    max-height: 200px;
   }
 }/*# sourceMappingURL=style.css.map */

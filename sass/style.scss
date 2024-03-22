@@ -48,14 +48,14 @@ html { scroll-behavior: smooth;}
 body{
     font-family: sans-serif;
     // background-color: lighten($themeColor, 40%);
-    padding: 0;
-    margin: 0;
-    color: antiquewhite;
+    color: rgb(255, 255, 255);
 }
 
 .container{
     margin-left: auto;
     margin-right: auto;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
 }
 
@@ -121,12 +121,13 @@ body{
         bottom: 0;
         width: 100%;
         display: flex;
+        overflow: hidden;
     
 
         .side-a{
          flex: 1;
         //  background-color: $area1 ; 
-         color: antiquewhite;
+        //  color: antiquewhite;
 
          h1{
             font-size: 50px;
@@ -144,7 +145,6 @@ body{
              a{
                 opacity: 0;
                 text-decoration: none;
-                color: antiquewhite;
                 animation: fade 1s, slideToRight 1s;
                 animation-fill-mode: forwards;
                 animation-delay: 1s;
@@ -206,7 +206,6 @@ body{
                 justify-content: center;
                 flex-direction: column;
                 padding-top: 70px;
-                color:antiquewhite;
                 opacity: 0;
                 animation: fade 1s, slideToLeft 1s;
                 animation-fill-mode: forwards;
@@ -242,39 +241,46 @@ body{
 }
 
 .introduction{
-    .work-container .flex-box:nth-of-type(odd){
-        .text-img-box{
-            .img{
-                padding: 10px;
-                float: left;
+    .work-container {
+        .flex-box{
+            .text-img-box{
+                .img{
+                    padding: 10px;
+                    float: left;
     
-                    img{
-                        width: 170px;
-                        height: 245px;
-                        opacity: 0;
-                        position: relative; 
+                        .myself-img{
+                            opacity: 0;
+                        }
+        
+                        img{
+                            width: 170px;
+                            height: 245px;
+                            position: relative; 
+                        }
                     }
-                }
+            }
         }
-            
-    }
 
-    .work-container .flex-box:nth-of-type(even){
-        .text-img-box{
-            .img{
+        .section-2{
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .img-carousel{
+                background-color: rgb(100, 100, 100);
+                width: 800px;
+                height: 500px;
                 padding: 10px;
-                float: right;
-    
-                    img{
-                        width: 170px;
-                        height: 245px;
-                        opacity: 0;
-                        position: relative; 
-                    }
+                display: flex;
+
+                .image-item{
+                    min-width: 100%;
+                    min-height: 100%;
+                    // display: none;
                 }
+            }
         }
     }
-
 }
 
 
@@ -282,7 +288,6 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    color: aliceblue;
     width: 100%;
     padding-bottom: 10px;
 
@@ -337,11 +342,33 @@ body{
     }
 
     .main-content{
-        padding: 10px;
+        padding: 20px;
         .work-container{
             .flex-box{
                 .work-img{
                     display: none;
+                }
+            }
+        }
+
+        .introduction{
+            .section-2{
+                .img-carousel{
+                    max-width: 90%;
+                    max-height: 400px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .main-content{
+        .introduction{
+            .section-2{
+                .img-carousel{
+                    max-width: 500px;
+                    max-height: 200px;
                 }
             }
         }

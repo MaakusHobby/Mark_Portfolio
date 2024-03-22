@@ -65,9 +65,8 @@ function setBgColor()
 
 }
 
-window.addEventListener("DOMContentLoaded", function() {   
-    setBgColor();
-
+function computeWorkDate()
+{
     let work_dates = this.document.querySelectorAll(".work-date")
 
     console.log(work_dates)
@@ -85,66 +84,76 @@ window.addEventListener("DOMContentLoaded", function() {
         this.document.querySelectorAll(".work-date-diff")[index].innerHTML = yr + " " + yr_str 
 
     })
+}
+
+function fadeTextImage(scrollValue)
+{  
+    let num = scrollValue;
+    //for fading text
+    let intro_paragraphs =  this.document.querySelectorAll('.introduction .flex-box .text-img-box p');
+    
+    intro_paragraphs.forEach((item) => item.style.opacity = num * .99)
+
+    const myselfImg =  this.document.querySelector('.introduction .flex-box .text-img-box .img .myself-img');
+    
+    
+    if(num >= 0.45)
+    {
+        if(!animationPlayed)
+        {
+            myselfImg.style.animation =  "fade 1s, slideToLeft 1s";
+            animationPlayed = true;
+        }
+       
+    }
+    
+    if(animationPlayed)
+        {
+            myselfImg.style.opacity = num * .98;
+            myselfImg.style.animationFillMode = "none";
+        }
+}
+
+var imgIndex = 0;
+
+function imageCarousel()
+{
+    let imgItems =  this.document.querySelectorAll('.image-item');
+
+    imgItems.forEach((item) => {
+        item.style.display = 'none';
+    })
+
+    imgItems[imgIndex].style.display = 'block';
+    
+    imgIndex++;
+
+    if(imgIndex >= imgItems.length )
+    {
+        imgIndex = 0;
+    }
+
+    // imgIndex = imgIndex >= imgItems.length ? 0 : imgIndex += 1;
+
+    setTimeout(imageCarousel, 1000);
+}
+
+window.addEventListener("DOMContentLoaded", function() {   
+    setBgColor();
+    computeWorkDate();
+
+    imageCarousel('.image-item')
+  
 }); 
 
 
 window.addEventListener('scroll', function() {
     let num = this.window.scrollY / this.window.innerHeight;
 
-    // this.document.getElementById('ctr-text').innerHTML = num;
-  
-    // introduction
+    fadeTextImage(num);
 
-    //for fading text
-    let intro_paragraphs =  this.document.querySelectorAll('.introduction .flex-box .text-img-box p');
-    intro_paragraphs.forEach((item) => item.style.opacity = num * .95)
-
-     //for fading images
-    let img_items = this.document.querySelectorAll('.introduction .flex-box .text-img-box .img img');
-
-    
-    if(num >= 0.75)
-    {
-        if(!animationPlayed)
-        {
-            img_items.forEach((item, index) => {
-                if(index % 2 == 0)
-                {
-                    item.style.animation =  "fade 1s, slideToLeft 1s";
-                }else
-                {
-                    item.style.animation =  "fade 1s, slideToRight 1s";
-                    
-                }
-                item.style.animationFillMode =  "forwards";
-               })
-               animationPlayed = true;
-        }
-       
-    }else
-    {
-        if(animationPlayed)
-        {
-            img_items.forEach((item, index) => {
-                item.style.opacity =  num;
-                item.style.animationFillMode =  "none";
-            })
-        }
-    }
+    // this.document.getElementById('ctr-text').innerHTML = "Counter : " + num;
 
     this.document.getElementById("intro-title").style.scale = num;
     this.document.getElementById("intro-text").style.scale = num + 1;
-    // this.document.getElementById("contact").style.scale = num * .5;
-
-    // Work Date
-    // const work_date = this.document.getElementById("work-date").innerHTML.split("-")
-    // let date1 = new Date(work_date[0]);
-    // let date2 = new Date(work_date[1]);
-
-    // let yr =  DateDiff.inYears(date1, date2);
-
-    // this.document.getElementById("work-date-diff").innerHTML = yr + "year/s"
-    
-
-    // work image
 })
