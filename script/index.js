@@ -114,28 +114,25 @@ function fadeTextImage(scrollValue)
         }
 }
 
-var imgIndex = 0;
 
-function imageCarousel()
+function imageCarousel(itemList)
 {
-    let imgItems =  this.document.querySelectorAll('.image-item');
+    var imgIndex = 0;
 
-    imgItems.forEach((item) => {
-        item.style.display = 'none';
-    })
+    function playCarousel()  {
+        let imgItems =  this.document.querySelectorAll(itemList);
 
-    imgItems[imgIndex].style.display = 'block';
+        imgItems.forEach((item) => {
+            item.style.display = 'none';
+        })
     
-    imgIndex++;
-
-    if(imgIndex >= imgItems.length )
-    {
-        imgIndex = 0;
+        imgItems[imgIndex].style.display = 'block';
+        
+        imgIndex = imgIndex +1 >= imgItems.length  ? 0 : imgIndex += 1;
     }
 
-    // imgIndex = imgIndex >= imgItems.length ? 0 : imgIndex += 1;
-
-    setTimeout(imageCarousel, 1000);
+    setInterval(playCarousel, 1500, itemList);
+    
 }
 
 window.addEventListener("DOMContentLoaded", function() {   

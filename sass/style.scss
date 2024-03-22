@@ -267,13 +267,17 @@ body{
             align-items: center;
 
             .img-carousel{
-                background-color: rgb(100, 100, 100);
+                background-color: rgba(67, 67, 67, 0.247);
                 width: 800px;
                 height: 500px;
-                padding: 10px;
+                padding: 35px;
                 display: flex;
+                flex-direction: column;
+                font-family: "Moon Dance";
+                font-size: 20px;
 
                 .image-item{
+                    display: none;
                     min-width: 100%;
                     min-height: 100%;
                     // display: none;
@@ -342,7 +346,6 @@ body{
     }
 
     .main-content{
-        padding: 20px;
         .work-container{
             .flex-box{
                 .work-img{
@@ -354,8 +357,8 @@ body{
         .introduction{
             .section-2{
                 .img-carousel{
-                    max-width: 90%;
-                    max-height: 400px;
+                    max-width: 450px;
+                    max-height: 300px;
                 }
             }
         }
@@ -367,8 +370,10 @@ body{
         .introduction{
             .section-2{
                 .img-carousel{
-                    max-width: 500px;
-                    max-height: 200px;
+                    max-width: 300px;
+                    max-height: 180px;
+                    padding: 20px;
+                    font-size: smaller;
                 }
             }
         }
