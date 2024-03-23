@@ -124,6 +124,7 @@ function imageCarousel(itemList)
 
         imgItems.forEach((item) => {
             item.style.display = 'none';
+            item.style.animation = 'fade 1s';
         })
     
         imgItems[imgIndex].style.display = 'block';
@@ -131,7 +132,7 @@ function imageCarousel(itemList)
         imgIndex = imgIndex +1 >= imgItems.length  ? 0 : imgIndex += 1;
     }
 
-    setInterval(playCarousel, 1500, itemList);
+    setInterval(playCarousel, 2000, itemList);
     
 }
 

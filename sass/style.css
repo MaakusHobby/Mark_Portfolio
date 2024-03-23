@@ -205,7 +205,10 @@ body {
   text-align: center;
 }
 .work-container .work-date, .work-container .work-date-diff {
-  font-family: "Moon Dance";
+  font-family: "Rubik", sans-serif;
+}
+.work-container .work-date {
+  font-size: large;
 }
 
 .introduction .work-container .flex-box .text-img-box .img {
