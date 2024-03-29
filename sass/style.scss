@@ -51,6 +51,31 @@ body{
     color: rgb(255, 255, 255);
 }
 
+.nav{
+    display: none;
+    opacity: 0;
+    height: 8%;
+    width: 10%;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 100;
+  
+
+    a{
+        
+        height: 100%;
+        width: 50px;
+        text-decoration: none;
+        text-align: center;
+        font-size: 100%;
+        // animation: slideToLeft 1s, rotate 1s;
+        // background-color: red;
+        animation: slideToLeft 1s;
+        
+    }
+}
+
 .container{
     margin-left: auto;
     margin-right: auto;
@@ -297,7 +322,8 @@ body{
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding-bottom: 10px;
+    // padding-bottom: 10px;
+    height: 8%;
 
     .contact-container{
         display: flex;
@@ -316,6 +342,10 @@ body{
 }
 
 @media only screen and (max-width: 1160px) {
+    .nav{
+        margin-right: 12px;
+    }
+
     .bg{
         .bg-container{
             flex-direction: column;

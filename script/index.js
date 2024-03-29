@@ -136,12 +136,37 @@ function imageCarousel(itemList)
     
 }
 
+function displayNav(num){
+    const nav =  this.document.querySelector('.nav');
+    // nav.style.backgroundColor = bg_color_light;
+
+    let bottomOffset = document.body.offsetHeight - (this.window.innerHeight + Math.round(this.window.scrollY));
+
+   
+
+console.log(num)
+    if(bottomOffset <= 150) {
+        nav.style.display = "none";
+        nav.style.opacity = 0; 
+    }else{
+        nav.style.opacity = num * .99; 
+
+        if(num <= 0.5){
+            nav.style.display = "none";
+        }else{
+            nav.style.display = "block";
+        }
+        
+    }
+}
+
+
 window.addEventListener("DOMContentLoaded", function() {   
     setBgColor();
     computeWorkDate();
 
     imageCarousel('.image-item')
-  
+
 }); 
 
 
@@ -149,6 +174,7 @@ window.addEventListener('scroll', function() {
     let num = this.window.scrollY / this.window.innerHeight;
 
     fadeTextImage(num);
+    displayNav(num);
 
     // this.document.getElementById('ctr-text').innerHTML = "Counter : " + num;
 
