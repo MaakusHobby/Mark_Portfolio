@@ -38,8 +38,8 @@ var bg_colors = {
     custom5 : { light: "#436850", dark: "#12372A"},
     custom6 : { light: "#FC6736", dark: "#0C2D57"},
     custom7 : { light: "#59B4C3", dark: "#211C6A"},
-    custom7 : { light: "#944E63", dark: "#0D9276"},
-    custom7 : { light: "#B19470", dark: "#43766C"},
+    custom8 : { light: "#944E63", dark: "#0D9276"},
+    custom9 : { light: "#B19470", dark: "#43766C"},
 }
 
 var bg_color_light = "";
@@ -117,11 +117,15 @@ function fadeTextImage(scrollValue)
 
 function imageCarousel(itemList)
 {
-    var imgIndex = 0;
+    let imgIndex = 0;
 
-    function playCarousel()  {
-        let imgItems =  this.document.querySelectorAll(itemList);
+    let btnPrev = this.document.querySelector('.img-btn-prev');
+    let btnNext = this.document.querySelector('.img-btn-next');
 
+    let imgItems =  this.document.querySelectorAll(itemList);
+
+    function playCarousel(isClicked)  {
+        
         imgItems.forEach((item) => {
             item.style.display = 'none';
             item.style.animation = 'fade 1s';
@@ -129,10 +133,22 @@ function imageCarousel(itemList)
     
         imgItems[imgIndex].style.display = 'block';
         
-        imgIndex = imgIndex +1 >= imgItems.length  ? 0 : imgIndex += 1;
+        if(!isClicked) imgIndex = imgIndex + 1 >= imgItems.length  ? 0 : imgIndex += 1;
+        
     }
 
-    setInterval(playCarousel, 2000, itemList);
+    setInterval(playCarousel, 2500, false);
+
+    btnPrev.addEventListener("click", () => {
+        imgIndex = imgIndex - 1 <= 0  ? imgItems.length - 1 : imgIndex -= 1;  
+        playCarousel(true);
+
+    })
+
+    btnNext.addEventListener("click", () => {
+        imgIndex = imgIndex + 1 >= imgItems.length  ? 0 : imgIndex += 1;
+        playCarousel(true);
+    })
     
 }
 
@@ -142,9 +158,6 @@ function displayNav(num){
 
     let bottomOffset = document.body.offsetHeight - (this.window.innerHeight + Math.round(this.window.scrollY));
 
-   
-
-console.log(num)
     if(bottomOffset <= 150) {
         nav.style.display = "none";
         nav.style.opacity = 0; 
