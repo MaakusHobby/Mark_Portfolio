@@ -114,17 +114,47 @@ function fadeTextImage(scrollValue)
         }
 }
 
+class Timer {
+    constructor(fn, t) {
+        var timerObj = setInterval(fn, t);
 
-function imageCarousel(itemList)
+        this.stop = function () {
+            if (timerObj) {
+                clearInterval(timerObj);
+                timerObj = null;
+            }
+            return this;
+        };
+
+        // start timer using current settings (if it's not already running)
+        this.start = function () {
+            if (!timerObj) {
+                this.stop();
+                timerObj = setInterval(fn, t);
+            }
+            return this;
+        };
+
+        // start with new or original interval, stop current interval
+        this.reset = function (newT = t) {
+            t = newT;
+            return this.stop().start();
+        };
+    }
+}
+
+
+function imageCarousel(itemList, btnPrevSelect, btnNextSelect)
 {
     let imgIndex = 0;
 
-    let btnPrev = this.document.querySelector('.img-btn-prev');
-    let btnNext = this.document.querySelector('.img-btn-next');
+    let btnPrev = this.document.querySelector(btnPrevSelect);
+    let btnNext = this.document.querySelector(btnNextSelect);
 
     let imgItems =  this.document.querySelectorAll(itemList);
 
     function playCarousel(isClicked)  {
+        if(!isClicked) imgIndex = imgIndex + 1 >= imgItems.length  ? 0 : imgIndex += 1;
         
         imgItems.forEach((item) => {
             item.style.display = 'none';
@@ -132,23 +162,28 @@ function imageCarousel(itemList)
         })
     
         imgItems[imgIndex].style.display = 'block';
-        
-        if(!isClicked) imgIndex = imgIndex + 1 >= imgItems.length  ? 0 : imgIndex += 1;
-        
     }
 
-    setInterval(playCarousel, 2500, false);
+    var timer = new Timer(playCarousel, 2500);
 
     btnPrev.addEventListener("click", () => {
-        imgIndex = imgIndex - 1 <= 0  ? imgItems.length - 1 : imgIndex -= 1;  
+        imgIndex = imgIndex - 1 < 0  ? imgItems.length - 1 : imgIndex -= 1;  
         playCarousel(true);
 
+        timer.stop();
+        timer.reset(2500);
     })
 
     btnNext.addEventListener("click", () => {
         imgIndex = imgIndex + 1 >= imgItems.length  ? 0 : imgIndex += 1;
         playCarousel(true);
+
+        timer.stop();
+        timer.reset(2500);
     })
+
+    playCarousel(true);
+    timer.start();
     
 }
 
@@ -178,7 +213,7 @@ window.addEventListener("DOMContentLoaded", function() {
     setBgColor();
     computeWorkDate();
 
-    imageCarousel('.image-item')
+    imageCarousel('.image-item', '.img-btn-prev', '.img-btn-next');
 
 }); 
 
