@@ -208,13 +208,23 @@ function displayNav(num){
     }
 }
 
+document.onreadystatechange = function() {
+    if (document.readyState !== "complete") {
+        document.querySelector(".container").style.display = "none";
+    } else {
+        document.querySelector(".container").style.display = "block";
+        document.querySelector(".loading-container").style.display = "none";
+    }
+};
+
 
 window.addEventListener("DOMContentLoaded", function() {   
     setBgColor();
     computeWorkDate();
 
     imageCarousel('.image-item', '.img-btn-prev', '.img-btn-next');
-
+    // document.querySelector(".loader").style.color = bg_color_light;
+    // document.querySelector(".loader").style.background = bg_color_light;
 }); 
 
 
