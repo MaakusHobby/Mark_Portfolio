@@ -35,10 +35,10 @@ var bg_colors = {
     custom2 : { light: "#474F7A", dark: "#1F2544"},
     custom3 : { light: "#40679E", dark: "#1B3C73"},
     custom4 : { light: "#2D9596", dark: "#265073"},
-    custom5 : { light: "#436850", dark: "#12372A"},
+    custom5 : { light: "#214584", dark: "#320c4e"},
     custom6 : { light: "#FC6736", dark: "#0C2D57"},
     custom7 : { light: "#59B4C3", dark: "#211C6A"},
-    custom8 : { light: "#944E63", dark: "#0D9276"},
+    custom8 : { light: "#944E63", dark: "#066853"},
     custom9 : { light: "#B19470", dark: "#43766C"},
 }
 
