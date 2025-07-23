@@ -278,6 +278,13 @@ body {
   min-width: 100%;
   min-height: 100%;
 }
+.introduction .work-container .section-2 .video video {
+  max-width: 100%;
+  width: 800px;
+  height: auto;
+  display: block;
+  margin: 0 auto; /* center horizontally */
+}
 
 .skills-container {
   background-color: rgba(35, 35, 35, 0.278);
@@ -308,6 +315,13 @@ body {
 .contact .contact-container .contact-item h3 {
   padding-top: 5px;
   padding-left: 5px;
+}
+.contact .contact-container .contact-item a {
+  text-decoration: none;
+  color: white;
+}
+.contact .contact-container .contact-item a:hover {
+  color: #707bf4;
 }
 
 @media only screen and (max-width: 1160px) {
@@ -373,6 +387,17 @@ body {
     max-height: 180px;
     padding: 10px !important;
     font-size: 10px !important;
+  }
+  .main-content .work-container .flex-box .text-img-box .img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: none;
+  }
+  .main-content .work-container .flex-box .text-img-box .img img {
+    width: 200px;
+    height: 315px;
+    position: relative;
   }
   .main-content .work-container .flex-box .work-img {
     display: none;

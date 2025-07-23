@@ -332,6 +332,17 @@ body{
                     }
                 }
             }
+
+            .video{
+                video {
+                    max-width: 100%;
+                    width: 800px;
+                    // height: 500px;
+                    height: auto;
+                    display: block;
+                    margin: 0 auto; /* center horizontally */
+                }
+            }
         }
     }
 }
@@ -369,6 +380,16 @@ body{
             h3{
                 padding-top: 5px;
                 padding-left: 5px;
+            }
+
+            a{
+                text-decoration: none;
+                color: white;
+            }
+
+            a:hover
+            {
+                color: #707bf4;
             }
         }
     }
@@ -425,6 +446,9 @@ body{
         }
 
         .introduction{
+            
+
+
             .section-2{
                 .img-container{
                     .img-carousel{
@@ -488,6 +512,25 @@ body{
 
         .work-container{
             .flex-box{
+
+                .text-img-box{
+                        // background-color: #f92033;
+
+                        .img{
+                            // background-color: #f92033;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            float: none;
+
+                            img{
+                                width: 200px;
+                                height: 315px;
+                                position: relative; 
+                            }
+                        }
+                }
+
                 .work-img{
                    display: none;
                 }
